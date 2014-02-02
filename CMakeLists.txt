@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project(video_output)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+add_executable(video_output video_output.cc)
+target_link_libraries(video_output ${OpenCV_LIBS})
