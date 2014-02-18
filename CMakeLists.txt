@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 project(video_output)
+
+set(CMAKE_OSX_DEPLOYMENT_TARGET 10.8)
+
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories("/Users/yan/data/sdks/leap_sdk/LeapSDK/include")
