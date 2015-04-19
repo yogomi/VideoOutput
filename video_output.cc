@@ -168,7 +168,6 @@ void idle_func(void) {
 }
 
 static void ExitNx() {
-  std::cout << "cccc" << std::endl;
   video_output.release();
 }
 
@@ -214,6 +213,7 @@ int main(int argc, char** argv) {
 
   int mainHandle = glutCreateWindow("Sample 1");
   glutSetWindow(mainHandle);
+  glutFullScreen();
 
   init_opengl();
   Leap::Controller controller;

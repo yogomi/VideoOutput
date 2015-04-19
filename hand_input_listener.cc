@@ -68,7 +68,7 @@ Vector HandInputListener::convert_to_world_position_(const Vector &input_vector)
 
 int HandInputListener::open_hand_id_(const Frame& frame) {
   for (int i=0; i<frame.hands().count(); i++) {
-    if (frame.hands()[i].pointables().count() > 3) {
+    if (frame.hands()[i].fingers().extended().count() > 3) {
       return frame.hands()[i].id();
     }
   }
@@ -86,10 +86,10 @@ void HandInputListener::unlock() {
 }
 
 void HandInputListener::trace_finger_(const Hand& hand) {
-  int id = hand.pointables()[0].id();
-  if (id < 0) {
+  if (hand.fingers().extended().count() == 0) {
     return;
   }
+  int id = hand.fingers()[1].id();
   struct timeval now;
   gettimeofday(&now, NULL);
   const Pointable tracing_object = hand.pointable(id);
