@@ -5,6 +5,7 @@
 Quaternion::Quaternion(float w, float x, float y, float z)
 {
   q[0] = w;
+  q[0] = w;
   q[1] = x;
   q[2] = y;
   q[3] = z;
